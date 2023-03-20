@@ -8,6 +8,11 @@ import (
 	"context"
 	"time"
 )
+
+func log(s string) {
+	fmt.Printf("------ %v %v\n", time.Now(), s)
+			
+}
 func main() {
 	// choose a backend
 	back := &backend.Local{}
@@ -33,11 +38,11 @@ func main() {
 	ctx, _ := context.WithTimeout(context.Background(), time.Duration(5 * time.Second))
 	select {
 		case <-ctx.Done():
-			fmt.Println("context done")
+			log("context done")
 			shell.Exit()
-			fmt.Println("exiting")
+			log("exiting")
 		case <-done:
-			fmt.Println("done")
+			log("channel done")
 	}
 	
 }
