@@ -1,3 +1,6 @@
+psexpgo is a small library to make it easy to call functions in powershell from go code
+
+
 Output dump:
 
 
